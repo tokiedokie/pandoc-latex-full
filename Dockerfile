@@ -2,6 +2,9 @@ FROM pandoc/latex:latest
 
 RUN apk -U upgrade && \
     tlmgr update --self --all && \
-    tlmgr install scheme-full
+    tlmgr install collection-latexextra\
+    collection-fontsrecommended collection-fontsextra\
+    collection-binextra collection-luatex  && \
+    rm -rf /tmp/
 
 WORKDIR /wordspace
