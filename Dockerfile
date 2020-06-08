@@ -1,6 +1,6 @@
 FROM pandoc/latex:latest
 
-RUN apk update && \
+RUN apk -U upgrade && \
     tlmgr update --self --all && \
     tlmgr install scheme-full
 
