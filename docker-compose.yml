@@ -1,0 +1,7 @@
+version: "3.8"
+services:
+  pandoc-latex-full:
+    image: docker.pkg.github.com/tokiedokie/pandoc-latex-full/pandoc-latex-full:latest
+    volumes: 
+      - .:/workspace
+    command: pandoc report.md -o report.pdf -V documentclass=ltjarticle -V classoption=pandoc -V classoption=a4j -V geometry:margin=1in -V CJKmainfont=IPAexGothic --pdf-engine=lualatex --template=https://raw.githubusercontent.com/tokiedokie/pandoc-latex-template/master/eisvogel.tex --listings -N
