@@ -6,4 +6,4 @@ RUN apk -U upgrade && \
     tlmgr install scheme-full && \
     rm -rf /tmp/
 
-WORKDIR /wordspace
+WORKDIR /workspace
