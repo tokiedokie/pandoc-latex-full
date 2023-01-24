@@ -1,4 +1,10 @@
-FROM pandoc/latex:latest
+FROM pandoc/latex:latest-ubuntu
+
+RUN apt-get update && \
+    apt-get install -y python2 && \
+    ln -s /usr/bin/python2 /usr/bin/python && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN tlmgr update --self --all && \
     tlmgr install scheme-full
