@@ -9,7 +9,7 @@ RUN apt-get update && \
 
 RUN curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 
-RUN export PATH=/root/.cabal/bin:/root/.ghcup/bin:$PATH
+ENV PATH /root/.cabal/bin:/root/.ghcup/bin:$PATH
 
 RUN cabal v2-update && \
     cabal v2-install --install-method=copy pandoc pandoc-crossref
